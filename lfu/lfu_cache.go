@@ -1,4 +1,4 @@
-package lfu_cache
+package lfu
 
 import "log"
 
@@ -34,7 +34,7 @@ func (cache *LFUCache) Get(key interface{}) interface{} {
 		cache.moveToNextBucket(node)
 		return node.val
 	}
-	return -1
+	return nil
 }
 
 func (cache *LFUCache) Put(key, val interface{}) {

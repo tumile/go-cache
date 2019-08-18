@@ -1,8 +1,7 @@
-package lfu_cache
+package lru
 
 type node struct {
 	key, val interface{}
-	bucket   int
 	prev     *node
 	next     *node
 }
