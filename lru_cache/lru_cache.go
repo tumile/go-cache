@@ -1,5 +1,7 @@
 package lru_cache
 
+import "log"
+
 type LRUCache struct {
 	list     *doublyLinkedList
 	dict     map[interface{}]*node
@@ -7,6 +9,9 @@ type LRUCache struct {
 }
 
 func NewLRUCache(capacity int) *LRUCache {
+	if capacity == 0 {
+		log.Fatal("Capacity should not be 0")
+	}
 	cache := LRUCache{
 		list:     newDoublyLinkedList(),
 		dict:     map[interface{}]*node{},
