@@ -1,4 +1,4 @@
-package cache
+package lru_cache
 
 type node struct {
 	key, val interface{}
